@@ -33,11 +33,18 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(timelineEntry)
     }
     
-    func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
-        // Call the handler with the timeline entries prior to the given date
-        handler(nil)
+    func getTimelineEntriesForComplication(complication: CLKComplication,
+        beforeDate date: NSDate, limit: Int,
+        withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
+        let entries = TwitterAccount.tweetsBeforeDate(date).map {
+            (date: NSDate, text: String) -> CLKComplicationTimelineEntry in
+            let tweetDate = date.dateByAddingTimeInterval(-365 * 24 * 60 * 60)
+            return createTimelineEntryOnTweetDate(tweetDate, currentDate:
+                date, tweetText: text)
+        }
+        handler(entries)
     }
-    
+
     func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries after to the given date
         handler(nil)
