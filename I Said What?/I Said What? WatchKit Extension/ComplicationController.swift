@@ -53,8 +53,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Update Scheduling
     
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
-        // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-        handler(nil);
+        let sixHours = NSDate(timeIntervalSinceNow: 6 * 60 * 60)
+        handler(sixHours);
     }
     
     // MARK: - Placeholder Templates
