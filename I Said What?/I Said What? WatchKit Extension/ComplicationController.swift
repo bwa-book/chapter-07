@@ -59,9 +59,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Placeholder Templates
     
-    func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
-        // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+    func getPlaceholderTemplateForComplication(complication: CLKComplication,
+        withHandler handler: (CLKComplicationTemplate?) -> Void) {
+
+        let tweetDate = NSDate(timeIntervalSince1970: 499138500)
+        let units: NSCalendarUnit = [.Year, .Month, .Day]
+        let dateProvider = CLKDateTextProvider(date: tweetDate, units: units)
+
+        let tweetText = "Drove Delorian. Traveled in time."
+        let textProvider = CLKSimpleTextProvider(text: tweetText)
+
+        let image = UIImage(named: "Complication/Modular")!
+        let imageProvider = CLKImageProvider(onePieceImage: image)
+
+        let placeholder = CLKComplicationTemplateModularLargeStandardBody()
+        placeholder.headerTextProvider = dateProvider
+        placeholder.body1TextProvider = textProvider
+        placeholder.headerImageProvider = imageProvider
+
+        handler(placeholder)
     }
 
     func createTimelineEntryOnTweetDate(tweetDate: NSDate, currentDate: NSDate,
