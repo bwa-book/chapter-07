@@ -27,8 +27,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
-        // Call the handler with the current timeline entry
-        handler(nil)
+        let tweetDate = NSDate(timeIntervalSinceNow: -365 * 24 * 60 * 60)
+        let timelineEntry = createTimelineEntryOnTweetDate(tweetDate,
+            currentDate: NSDate(), tweetText: "An entertaining tweet")
+        handler(timelineEntry)
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
@@ -53,6 +55,24 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
         handler(nil)
+    }
+
+    func createTimelineEntryOnTweetDate(tweetDate: NSDate, currentDate: NSDate,
+        tweetText: String) -> CLKComplicationTimelineEntry {
+
+        let units: NSCalendarUnit = [.Year, .Month, .Day]
+        let dateProvider = CLKDateTextProvider(date: tweetDate, units: units)
+        let textProvider = CLKSimpleTextProvider(text: tweetText)
+
+        let image = UIImage(named: "Complication/Modular")!
+        let imageProvider = CLKImageProvider(onePieceImage: image)
+
+        let complication = CLKComplicationTemplateModularLargeStandardBody()
+        complication.headerTextProvider = dateProvider
+        complication.body1TextProvider = textProvider
+        complication.headerImageProvider = imageProvider
+        return CLKComplicationTimelineEntry(
+            date: currentDate, complicationTemplate: complication)
     }
     
 }
