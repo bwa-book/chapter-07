@@ -19,6 +19,7 @@
 		58457BE31C00D48C00360D4A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58457BE21C00D48C00360D4A /* InterfaceController.swift */; };
 		58457BE51C00D48C00360D4A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58457BE41C00D48C00360D4A /* ExtensionDelegate.swift */; };
 		58457BE71C00D48C00360D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58457BE61C00D48C00360D4A /* Assets.xcassets */; };
+		58457BF71C00D52B00360D4A /* ComplicationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58457BF61C00D52B00360D4A /* ComplicationDataSource.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		58457BE41C00D48C00360D4A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		58457BE61C00D48C00360D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58457BE81C00D48C00360D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58457BF61C00D52B00360D4A /* ComplicationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				58457BE41C00D48C00360D4A /* ExtensionDelegate.swift */,
 				58457BE61C00D48C00360D4A /* Assets.xcassets */,
 				58457BE81C00D48C00360D4A /* Info.plist */,
+				58457BF61C00D52B00360D4A /* ComplicationDataSource.swift */,
 			);
 			path = "Simple Life WatchKit Extension";
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			files = (
 				58457BE51C00D48C00360D4A /* ExtensionDelegate.swift in Sources */,
 				58457BE31C00D48C00360D4A /* InterfaceController.swift in Sources */,
+				58457BF71C00D52B00360D4A /* ComplicationDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
