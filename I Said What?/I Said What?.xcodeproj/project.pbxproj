@@ -20,6 +20,7 @@
 		58457BA01C00D22E00360D4A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58457B9F1C00D22E00360D4A /* ExtensionDelegate.swift */; };
 		58457BA21C00D22E00360D4A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58457BA11C00D22E00360D4A /* ComplicationController.swift */; };
 		58457BA41C00D22E00360D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58457BA31C00D22E00360D4A /* Assets.xcassets */; };
+		58457BF91C00F1FF00360D4A /* TwitterAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58457BF81C00F1FF00360D4A /* TwitterAccount.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		58457BA11C00D22E00360D4A /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		58457BA31C00D22E00360D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58457BA51C00D22E00360D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58457BF81C00F1FF00360D4A /* TwitterAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				58457BA11C00D22E00360D4A /* ComplicationController.swift */,
 				58457BA31C00D22E00360D4A /* Assets.xcassets */,
 				58457BA51C00D22E00360D4A /* Info.plist */,
+				58457BF81C00F1FF00360D4A /* TwitterAccount.swift */,
 			);
 			path = "I Said What? WatchKit Extension";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				58457BA01C00D22E00360D4A /* ExtensionDelegate.swift in Sources */,
 				58457B9E1C00D22E00360D4A /* InterfaceController.swift in Sources */,
 				58457BA21C00D22E00360D4A /* ComplicationController.swift in Sources */,
+				58457BF91C00F1FF00360D4A /* TwitterAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

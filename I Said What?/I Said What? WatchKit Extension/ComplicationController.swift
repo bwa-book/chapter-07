@@ -10,15 +10,18 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        handler(nil)
+        let twelveHours = NSDate(timeIntervalSinceNow: -12 * 60 * 60)
+        handler(twelveHours)
     }
     
     func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        handler(nil)
+        let sixHours = NSDate(timeIntervalSinceNow: 6 * 60 * 60)
+        handler(sixHours)
     }
     
     func getPrivacyBehaviorForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationPrivacyBehavior) -> Void) {
-        handler(.ShowOnLockScreen)
+        let privateAcct = TwitterAccount.isPrivate()
+        handler(privateAcct ? .HideOnLockScreen : .ShowOnLockScreen)
     }
     
     // MARK: - Timeline Population
